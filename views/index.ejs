@@ -7,8 +7,39 @@
     <link rel="stylesheet" href="styles/index.css">
 </head>
 <body>
-    <div class="test">
-        This is a test blog for Users.
+    <header>
+        The Blogger
+    </header>
+    <div class="form-area">
+        <form action="/create_Post" method="post">
+                <div class="create">
+                    <button>
+                        New
+                    </button>
+                </div>
+            </form>
+            <form action="/alter_Post" method="post">
+                <div class  ="main-area">
+                    <% if(locals.form_data) {%>
+                        <%- form_data %>
+                    <% } else { %>
+                        <button class='test'>
+                        </button>
+                        <button class="test" name="id" value="2">
+                            This is a test blog for Users.
+                        </button>
+                        <button class="test">
+                            This is a test blog for Users.
+                        </button>
+                        <button class="test">
+                            This is a test blog for Users.
+                        </button>
+                        <button class="test">
+                            This is a test blog for Users.
+                        </button>
+                    <% } %>
+                </div>
+        </form>
     </div>
 </body>
 </html>

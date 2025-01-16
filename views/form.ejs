@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="stylesheet" href="styles/form.css">
+    
+</head>
+<body>
+    <div class="form-area">
+        <form action="/" method="post">
+            <label for="heading">Heading:</label>
+            <textarea name="blog_heading" id="heading" placeholder="Enter heading here"><% if (locals.blog_heading) {%><%= blog_heading %><% } %>
+            </textarea>
+            <label for="Blog">Blog:</label>
+            <textarea name="blog_details" id="Blog"><% if (locals.blog_details) { %><%= blog_details %><% } else {%><% } %>
+            </textarea>
+            <div>
+                <% if (locals.blog_heading) {%>
+                    <input type="submit" name="name" id="" value="update">
+                    <input type="submit" name="name" id="" value="delete">
+                <% } else { %>
+                    <button type="submit" name="name" id="" value="create">create</button>
+                <% } %>
+            </div>            
+        </form>
+    </div> 
+</body>
+</html>
