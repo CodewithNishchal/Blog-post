@@ -80,7 +80,10 @@ app.post("/", (req, res) => {
             content += element;
         });
         curr_id = -1;
-        res.render("index.ejs", { form_data: content });
+        if (content === " ")
+            res.render("index.ejs");
+        else
+            res.render("index.ejs", { form_data: content });
     }
         
     else

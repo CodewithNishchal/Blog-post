@@ -8,23 +8,44 @@
     
 </head>
 <body>
-    <div class="form-area">
-        <form action="/" method="post">
+    <div class="form_area">
+        <form action="/" method="post" id="form_area">
             <label for="heading">Heading:</label>
-            <textarea name="blog_heading" id="heading" placeholder="Enter heading here"><% if (locals.blog_heading) {%><%= blog_heading %><% } %>
-            </textarea>
-            <label for="Blog">Blog:</label>
-            <textarea name="blog_details" id="Blog"><% if (locals.blog_details) { %><%= blog_details %><% } else {%><% } %>
-            </textarea>
-            <div>
+            <% if (locals.blog_heading) {%>
+                <textarea name="blog_heading" id="heading" class="blog_heading"><%= blog_heading %> 
+                </textarea>
+            <% } else {%>
+                <textarea name="blog_heading" id="heading" class="blog_heading" placeholder="Enter heading here"></textarea>
+            <% } %>
+            <div><label for="Blog">Blog:</label><b id="word_count"></b></div>
+            <% if (locals.blog_details) { %>
+                <textarea name="blog_details" id="Blog" class="blog_details"><%= blog_details %></textarea>
+            <% } else {%>
+                <textarea name="blog_details" id="Blog" class="blog_details" placeholder="Write your Blog here"></textarea>
+            <% } %>
+            <div class="end_button_div">
                 <% if (locals.blog_heading) {%>
-                    <input type="submit" name="name" id="" value="update">
-                    <input type="submit" name="name" id="" value="delete">
+                    <input type="submit" name="name" id="" value="update" class="end_button">
+                    <input type="submit" name="name" id="" value="delete" class="end_button">
                 <% } else { %>
-                    <button type="submit" name="name" id="" value="create">create</button>
+                    <button type="submit" name="name" id="" value="create" class="end_button">create</button>
                 <% } %>
             </div>            
         </form>
+        <script>
+            var word_count = document.querySelector("textarea.blog_details").value.length;
+            var count = document.querySelector("b#word_count");
+            document.querySelector("textarea.blog_details").addEventListener("input", function()
+            {
+                word_count = this.value.length;
+                if (word_count === 0)
+                    count.innerHTML = " ";
+                else
+                {
+                    count.innerHTML = "Letter Count: " + word_count;
+                }
+            });
+        </script>
     </div> 
 </body>
 </html>

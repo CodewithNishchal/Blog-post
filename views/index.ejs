@@ -18,7 +18,9 @@
     <div class="form-area">
         <form action="/create_Post" method="post">
                 <div class="create">
-                    <input type="submit" id="create_button" value="New">
+                    <input type="submit" class="create_button" value="Create">
+                    <input type="button" class="create_button Update" value="Update">
+                    <input type="button" class="create_button Delete" value="Delete">
                 </div>
             </form>
             <form action="/alter_Post" method="post">
@@ -27,7 +29,7 @@
                         <%- form_data %>
                     <% } else { %>
                         <p id="no_content">
-                            Press "create" to create a new BLOG.  
+                            Press "Create" to create a new BLOG.  
                         </p>
                     <% } %>
                 </div>
