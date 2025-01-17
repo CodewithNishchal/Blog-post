@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog and Post</title>
     <link rel="stylesheet" href="styles/index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Atma:wght@300;400;500;600;700&family=Host+Grotesk:ital,wght@0,300..800;1,300..800&family=Kablammo&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Modak&display=swap"
+        rel="stylesheet">
 </head>
 <body>
     <header>
@@ -13,9 +18,7 @@
     <div class="form-area">
         <form action="/create_Post" method="post">
                 <div class="create">
-                    <button>
-                        New
-                    </button>
+                    <input type="submit" id="create_button" value="New">
                 </div>
             </form>
             <form action="/alter_Post" method="post">
@@ -23,23 +26,13 @@
                     <% if(locals.form_data) {%>
                         <%- form_data %>
                     <% } else { %>
-                        <button class='test'>
-                        </button>
-                        <button class="test" name="id" value="2">
-                            This is a test blog for Users.
-                        </button>
-                        <button class="test">
-                            This is a test blog for Users.
-                        </button>
-                        <button class="test">
-                            This is a test blog for Users.
-                        </button>
-                        <button class="test">
-                            This is a test blog for Users.
-                        </button>
+                        <p id="no_content">
+                            Press "create" to create a new BLOG.  
+                        </p>
                     <% } %>
                 </div>
         </form>
     </div>
+    
 </body>
 </html>
